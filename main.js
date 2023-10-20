@@ -1,5 +1,5 @@
-//const API_URL = "https://fhu-faculty-api.netlify.app/fhu-faculty.json"
-const API_URL="/fhu-faculty-api.json"
+const API_URL = "https://fhu-faculty-api.netlify.app/fhu-faculty.json"
+//const API_URL="/fhu-faculty-api.json"
 
 let cardInnerHTML = 
 `
@@ -38,11 +38,7 @@ async function  addAllCards() {
 
     // load the data
 
-    let response = await fetch(API_URL, {
-        mode: 'cors',
-        headers: {
-          'Access-Control-Allow-Origin':'*'
-        }});
+    let response = await fetch(API_URL);
     let people = await response.json();
 
     people.forEach(person => {
